@@ -1,5 +1,6 @@
 public class Book {
 
+    private String SKU;
     private String bookTitle;
     private String author;
     private String description;
@@ -17,7 +18,7 @@ public class Book {
         this.bookTitle = bookTitle;
         this.description = description;
     }
-    public Book (  String author, String bookTitle, String description, double price, int isInStock){
+    public Book ( String author, String bookTitle, String description, double price, int isInStock){
         this.author = author;
         this.bookTitle = bookTitle;
         this.description = description;
@@ -25,7 +26,16 @@ public class Book {
         this.isInStock = isInStock;
 
     }
-    public double caluclatePrice(int userInput){
+    public Book ( String SKU, String author, String bookTitle, String description, double price, int isInStock) {
+        this.SKU = SKU;
+        this.author = author;
+        this.bookTitle = bookTitle;
+        this.description = description;
+        this.price = price;
+        this.isInStock = isInStock;
+    }
+
+        public double caluclatePrice(int userInput){
         double bookPrice = 0;
         if( this.isInStock >= userInput){
             bookPrice = userInput * this.price;
@@ -81,5 +91,12 @@ public class Book {
         this.price = price;
     }
 
+    public String getSKU() {
+        return SKU;
+    }
+
+    public void setSKU(String SKU) {
+        this.SKU = SKU;
+    }
 }
 
